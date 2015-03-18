@@ -2,6 +2,11 @@ package com.ventoelectrics.waterheater;
 
 public class VentoStandardWaterHeater extends VentoBaseWaterHeater {
 
+	public VentoStandardWaterHeater(VentoThermoregulator thermoregulator,
+			VentoHeater heater, VentoPowerSwitch powerSwitch) {
+		super(thermoregulator, heater, powerSwitch);
+	}
+
 	public static void main(String[] args) throws Exception {
 
 		final VentoThermometer ventoThermometer = new VentoThermometer();
@@ -10,7 +15,8 @@ public class VentoStandardWaterHeater extends VentoBaseWaterHeater {
 
 		final VentoThermoregulator ventoThermoregulator = null; // ACME standard thermoregulator instance. 
 
-		final VentoStandardWaterHeater waterHeater = new VentoStandardWaterHeater();
-		waterHeater.run(ventoThermoregulator, ventoHeater, ventoPowerSwitch);
+		final VentoStandardWaterHeater waterHeater = new VentoStandardWaterHeater(
+				ventoThermoregulator, ventoHeater, ventoPowerSwitch);
+		waterHeater.run();
 	}
 }
