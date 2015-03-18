@@ -4,20 +4,8 @@ import java.util.concurrent.TimeUnit;
 
 public abstract class VentoBaseWaterHeater {
 
-	private VentoThermoregulator thermoregulator;
-	private VentoHeater heater;
-	private VentoPowerSwitch powerSwitch;
-
-	public VentoBaseWaterHeater(VentoThermoregulator thermoregulator,
+	protected void run(VentoThermoregulator thermoregulator,
 			VentoHeater heater, VentoPowerSwitch powerSwitch) {
-
-		super();
-		this.thermoregulator = thermoregulator;
-		this.heater = heater;
-		this.powerSwitch = powerSwitch;
-	}
-
-	protected void run() {
 
 		powerSwitch.controlPowerFor(thermoregulator);
 		powerSwitch.controlPowerFor(heater);
