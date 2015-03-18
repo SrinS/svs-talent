@@ -12,6 +12,7 @@ public class StandardVentoWaterHeaterApp {
 
 		ventoPowerSwitch.controlPowerFor(ventoThermoregulator);
 		ventoPowerSwitch.controlPowerFor(ventoHeater);
+		ventoPowerSwitch.controlPowerFor(ventoThermometer);
 
 		VentoWaterHeaterApp.run(ventoThermoregulator, ventoPowerSwitch);
 	}

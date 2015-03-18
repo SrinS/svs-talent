@@ -16,15 +16,12 @@ public class VentoHeater implements VentoPoweredDevice {
 	
 	public void enable() {
 		if (!powerEnabled) {
-			return;
+			throw new NoPowerException();
 		}
 		System.out.println("VentoHeater.enable()");
 	}
 	
 	public void disable() {
-		if (!powerEnabled) {
-			return;
-		}
 		System.out.println("VentoHeater.disable()");
 	}
 }
