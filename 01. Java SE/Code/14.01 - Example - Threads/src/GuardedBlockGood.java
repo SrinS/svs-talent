@@ -8,9 +8,9 @@ public class GuardedBlockGood {
 
 		Thread.sleep(2000);
 		Logger.log("Please proceed!");
-		task.proceed = true;
 		synchronized (task) {
-			task.notify();
+			task.proceed = true;
+			task.notifyAll();
 		}
 	}
 
